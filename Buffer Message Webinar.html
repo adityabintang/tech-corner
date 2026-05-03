@@ -315,9 +315,9 @@
 
   <!-- SLIDE 8: KENAPA BUFFER MESSAGE PENTING? -->
   <section data-screen-label="08 Kenapa Buffer Message" id="slide-why">
-    <div id="s7-bg" style="position:absolute;inset:0;"></div>
-    <div id="s7-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:55%;left:25%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-    <div id="s7-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">THE PROBLEM</div>
+    <div id="s7-bg" style="position:absolute;inset:0;background:#0f0a0a;"></div>
+    <div id="s7-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:55%;left:25%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,rgba(239,68,68,0.15) 0%,transparent 70%);"></div>
+    <div id="s7-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;color:rgba(249,115,22,0.7);">THE PROBLEM</div>
 
     <div style="position:relative;z-index:2;width:1700px;display:flex;align-items:center;gap:120px;">
 
@@ -382,11 +382,11 @@
             </div>
 
             <!-- API call counter overlay -->
-            <div id="s6-counter" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);padding:14px 22px;border-radius:14px;display:flex;align-items:center;gap:14px;border:1px solid;z-index:4;">
+            <div id="s6-counter" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(15,10,10,0.95);backdrop-filter:blur(10px);padding:14px 22px;border-radius:14px;display:flex;align-items:center;gap:14px;border:1px solid;border-color:rgba(249,115,22,0.3);z-index:4;">
               <div style="width:8px;height:8px;border-radius:50%;background:#ef4444;animation:pulse 1.2s ease-in-out infinite;"></div>
               <div style="display:flex;flex-direction:column;line-height:1.1;">
-                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.1em;">API CALLS</span>
-                <span style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#ef4444;">×6</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(254,243,226,0.5);letter-spacing:0.1em;">API CALLS</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#f97316;">×6</span>
               </div>
             </div>
           </div>
@@ -396,17 +396,17 @@
       <!-- RIGHT: penjelasan -->
       <div style="display:flex;flex-direction:column;gap:36px;flex:1;">
         <div style="display:flex;flex-direction:column;gap:16px;">
-          <span id="s6-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Mengapa ini masalah?</span>
-          <div id="s6-title" style="font-size:78px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">Kenapa Buffer<br/><span id="s6-title-span">Message Penting?</span></div>
+          <span id="s6-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(249,115,22,0.7);">// Mengapa ini masalah?</span>
+          <div id="s6-title" style="font-size:78px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;color:#fef3e2;">Kenapa Buffer<br/><span id="s6-title-span" style="background:linear-gradient(135deg,#f97316,#ef4444,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Message Penting?</span></div>
         </div>
 
         <div style="display:flex;flex-direction:column;gap:18px;">
-          <div id="s6-point1" style="position:relative;display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-radius:18px;border:1px solid;overflow:hidden;">
+          <div id="s6-point1" style="position:relative;display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-radius:18px;border:1px solid;border-color:rgba(249,115,22,0.25);background:rgba(249,115,22,0.05);overflow:hidden;">
             <div id="s6-numbig1" style="position:absolute;right:24px;top:8px;font-family:'JetBrains Mono',monospace;font-size:60px;font-weight:800;opacity:0.08;letter-spacing:-0.05em;">01</div>
-            <div id="s6-icon1" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px;">🔁</div>
+            <div id="s6-icon1" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px;background:rgba(249,115,22,0.1);">🔁</div>
             <div style="flex:1;">
               <div style="font-size:30px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em;">Duplikasi Respons AI</div>
-              <div id="s6-pdesc1" style="font-size:24px;line-height:1.5;">Tanpa buffer, setiap pesan langsung memicu AI — 3 "Halo" = 3 panggilan API terpisah.</div>
+              <div id="s6-pdesc1" style="font-size:24px;line-height:1.5;color:#fef3e2;">Tanpa buffer, setiap pesan langsung memicu AI — 3 "Halo" = 3 panggilan API terpisah.</div>
             </div>
           </div>
 
