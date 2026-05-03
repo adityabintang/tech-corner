@@ -80,23 +80,23 @@
     <div id="s2-glow" style="position:absolute;width:900px;height:900px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
     <div id="s2-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">PEMBICARA</div>
 
-    <div style="position:relative;z-index:2;display:flex;align-items:center;gap:100px;width:1480px;">
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:60px;width:100%;max-width:600px;">
       <div style="position:relative;flex-shrink:0;">
         <div id="s2-ring" style="position:absolute;inset:-8px;border-radius:50%;animation:spin 8s linear infinite;"></div>
         <div id="s2-ring-inner" style="position:absolute;inset:-5px;border-radius:50%;"></div>
-        <img src="assets/aditya.png" alt="Aditya Bintang Fadila" style="position:relative;z-index:1;width:340px;height:340px;border-radius:50%;object-fit:cover;object-position:center top;display:block;" />
+        <img src="assets/aditya.png" alt="Aditya Bintang Fadila" style="position:relative;z-index:1;width:280px;height:280px;border-radius:50%;object-fit:cover;object-position:center top;display:block;" />
       </div>
-      <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="display:flex;flex-direction:column;gap:20px;text-align:center;">
         <span id="s2-hi" style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:0.1em;">// Hello, I'm</span>
         <div id="s2-name" style="font-size:88px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">
           <div>Aditya</div>
           <div>Bintang</div>
           <div id="s2-name-last">Fadila</div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
-          <div id="s2-chip1" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">🏗️ Founder · MetaCommunity</div>
-          <div id="s2-chip2" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">💡 Founder · Qashierwise</div>
-          <div id="s2-chip3" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">📱 Mobile Developer · Truku Indonesia</div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;align-items:center;">
+          <div id="s2-chip1" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">🏗️ MetaCommunity</div>
+          <div id="s2-chip2" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">💡 Qashierwise</div>
+          <div id="s2-chip3" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">📱 Truku Indonesia</div>
         </div>
       </div>
     </div>
@@ -468,7 +468,7 @@
       </div>
 
       <!-- Workflow canvas wrapper -->
-      <div id="s8-canvas" style="position:relative;border-radius:28px;padding:64px 48px 56px;border:1px solid;overflow:visible;">
+      <div id="s8-canvas" style="position:relative;border-radius:28px;padding:48px 40px 48px;border:1px solid;overflow:visible;">
         <!-- canvas chrome dots -->
         <div style="position:absolute;top:18px;left:24px;display:flex;gap:8px;align-items:center;">
           <div style="width:12px;height:12px;border-radius:50%;background:#ef4444;opacity:0.7;"></div>
@@ -481,8 +481,8 @@
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0;position:relative;">
 
           <!-- connector line behind nodes -->
-          <svg style="position:absolute;top:60px;left:60px;right:60px;height:4px;width:calc(100% - 120px);z-index:0;" preserveAspectRatio="none" viewBox="0 0 100 4">
-            <line id="s8-connector" x1="0" y1="2" x2="100" y2="2" stroke-width="2" stroke-dasharray="4 4"/>
+          <svg style="position:absolute;top:60px;left:0;right:0;height:4px;width:100%;z-index:0;" preserveAspectRatio="none" viewBox="0 0 100 4">
+            <line id="s8-connector" x1="0" y1="2" x2="100" y2="2" stroke-width="2" stroke-dasharray="6 4" style="animation:flowLine 1s linear infinite;"/>
           </svg>
 
           <!-- Node 1: Webhook -->
@@ -551,19 +551,18 @@
             <div id="s8-pulse3" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 0.8s;"></div>
           </div>
 
-          <!-- Node 4: AI -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
-            <div id="s8-node4" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
-              <div id="s8-node4-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="12" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 8V5M15 8V5M12 5V3M4 12H2M22 12h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-              </div>
-              <div style="font-size:24px;font-weight:700;">AI Agent</div>
+          <!-- Node 4: Redis Store -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:200px;">
+            <div id="s8-node4" style="width:140px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node4-icon" style="width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;">⚡</div>
+              <div style="font-size:20px;font-weight:700;">Redis</div>
+              <div style="font-size:13px;opacity:0.7;">Store</div>
               <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
               <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
             </div>
             <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
-              <div id="s8-step4" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 04</div>
-              <div id="s8-desc4" style="font-size:24px;line-height:1.4;max-width:220px;">LLM proses konteks lengkap → reply</div>
+              <div id="s8-step4" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;letter-spacing:0.1em;">CACHE</div>
+              <div id="s8-desc4" style="font-size:20px;line-height:1.3;max-width:180px;">Simpan konteks di Redis</div>
             </div>
           </div>
 
@@ -572,18 +571,37 @@
             <div id="s8-pulse4" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 1.2s;"></div>
           </div>
 
-          <!-- Node 5: Send -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
-            <div id="s8-node5" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
-              <div id="s8-node5-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div style="font-size:24px;font-weight:700;">Send Reply</div>
+          <!-- Node 5: AI -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:200px;">
+            <div id="s8-node5" style="width:140px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node5-icon" style="width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;">🤖</div>
+              <div style="font-size:20px;font-weight:700;">AI</div>
+              <div style="font-size:13px;opacity:0.7;">Agent</div>
+              <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+              <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step5" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;letter-spacing:0.1em;">STEP 05</div>
+              <div id="s8-desc5" style="font-size:20px;line-height:1.3;max-width:180px;">LLM proses → reply</div>
+            </div>
+          </div>
+
+          <!-- Arrow 5 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:54px;">
+            <div id="s8-pulse5" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 1.6s;"></div>
+          </div>
+
+          <!-- Node 6: Send -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:200px;">
+            <div id="s8-node6" style="width:140px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node6-icon" style="width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;">📤</div>
+              <div style="font-size:20px;font-weight:700;">Send</div>
+              <div style="font-size:13px;opacity:0.7;">Reply</div>
               <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
             </div>
             <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
-              <div id="s8-step5" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 05</div>
-              <div id="s8-desc5" style="font-size:24px;line-height:1.4;max-width:220px;">Kirim 1 respons cerdas ke user</div>
+              <div id="s8-step6" style="font-family:'JetBrains Mono',monospace;font-size:16px;font-weight:700;letter-spacing:0.1em;">STEP 06</div>
+              <div id="s8-desc6" style="font-size:20px;line-height:1.3;max-width:180px;">Kirim respons</div>
             </div>
           </div>
 
@@ -602,7 +620,7 @@
         </div>
         <div id="s8-stat" style="display:flex;flex-direction:column;justify-content:center;padding:24px 36px;border-radius:18px;border:1px solid;min-width:280px;">
           <span style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.15em;opacity:0.6;">SEMUA NO-CODE</span>
-          <span id="s8-statbig" style="font-size:48px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;">5 nodes saja</span>
+          <span id="s8-statbig" style="font-size:48px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;">6 nodes + Redis</span>
         </div>
       </div>
     </div>
@@ -619,6 +637,8 @@
 <style>
 @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.65)} }
 @keyframes spin { to { transform: rotate(360deg); } }
+@keyframes flow { 0%{opacity:0;transform:translateX(-20px)} 50%{opacity:1} 100%{opacity:0;transform:translateX(20px)} }
+@keyframes flowLine { to { stroke-dashoffset: -8px; } }
 </style>
 
 <script type="text/babel">
