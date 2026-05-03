@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buffer Message for Better System — Webinar</title>
+  <script src="deck-stage.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #000; font-family: 'Space Grotesk', sans-serif; }
+    deck-stage { --deck-bg: #000; }
+
+    section {
+      width: 1920px;
+      height: 1080px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<deck-stage id="deck">
+
+  <!-- SLIDE 1: HERO -->
+  <section data-screen-label="01 Title" id="slide-hero">
+    <div id="s1-bg" style="position:absolute;inset:0;"></div>
+    <div id="s1-grid" style="position:absolute;inset:0;pointer-events:none;"></div>
+    <div id="s1-glow1" style="position:absolute;width:900px;height:900px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s1-glow2" style="position:absolute;width:500px;height:500px;border-radius:50%;top:30%;left:65%;pointer-events:none;"></div>
+
+    <div id="s1-corner-tl" style="position:absolute;top:48px;left:60px;width:60px;height:60px;"></div>
+    <div id="s1-corner-br" style="position:absolute;bottom:48px;right:60px;width:60px;height:60px;"></div>
+
+    <div id="s1-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">WEBINAR SESSION</div>
+
+    <div style="position:relative;z-index:2;text-align:center;display:flex;flex-direction:column;align-items:center;gap:28px;">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div id="s1-dot1" style="width:10px;height:10px;border-radius:50%;animation:pulse 2s ease-in-out infinite;"></div>
+        <span id="s1-tag" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;text-transform:uppercase;">Tech Corner · 2026</span>
+        <div id="s1-dot2" style="width:10px;height:10px;border-radius:50%;animation:pulse 2s ease-in-out infinite 0.5s;"></div>
+      </div>
+      <div id="s1-divider" style="width:80px;height:2px;"></div>
+      <h1 id="s1-title" style="font-size:100px;font-weight:800;line-height:1.05;letter-spacing:-0.02em;">
+        Buffer Message<br/><span id="s1-title-span">for Better System</span>
+      </h1>
+      <p id="s1-sub" style="font-size:30px;font-weight:300;letter-spacing:0.01em;">Arsitektur pesan yang tangguh untuk sistem modern</p>
+      <div id="s1-badge" style="display:flex;align-items:center;gap:12px;border-radius:100px;padding:12px 32px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.08em;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M5.5 8l2 2 3-3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        LIVE WEBINAR
+      </div>
+    </div>
+
+    <div id="s1-term-l" style="position:absolute;bottom:80px;left:100px;font-family:'JetBrains Mono',monospace;font-size:24px;line-height:1.8;z-index:2;">
+      &gt; init_session("buffer_message")<br/>
+      &gt; status: LIVE<br/>
+      &gt; participants: connected
+    </div>
+    <div id="s1-term-r" style="position:absolute;bottom:80px;right:100px;font-family:'JetBrains Mono',monospace;font-size:24px;line-height:1.8;text-align:right;z-index:2;">
+      queue.push(message)<br/>
+      consumer.listen()<br/>
+      system.scale()
+    </div>
+    <div id="s1-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">01 / 08</div>
+  </section>
+
+  <!-- SLIDE 2: SPEAKER -->
+  <section data-screen-label="02 Speaker" id="slide-speaker">
+    <div id="s2-bg" style="position:absolute;inset:0;"></div>
+    <div id="s2-glow" style="position:absolute;width:900px;height:900px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s2-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">PEMBICARA</div>
+
+    <div style="position:relative;z-index:2;display:flex;align-items:center;gap:100px;width:1480px;">
+      <div style="position:relative;flex-shrink:0;">
+        <div id="s2-ring" style="position:absolute;inset:-8px;border-radius:50%;animation:spin 8s linear infinite;"></div>
+        <div id="s2-ring-inner" style="position:absolute;inset:-5px;border-radius:50%;"></div>
+        <img src="assets/aditya.png" alt="Aditya Bintang Fadila" style="position:relative;z-index:1;width:340px;height:340px;border-radius:50%;object-fit:cover;object-position:center top;display:block;" />
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <span id="s2-hi" style="font-family:'JetBrains Mono',monospace;font-size:28px;letter-spacing:0.1em;">// Hello, I'm</span>
+        <div id="s2-name" style="font-size:88px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">
+          <div>Aditya</div>
+          <div>Bintang</div>
+          <div id="s2-name-last">Fadila</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+          <div id="s2-chip1" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">🏗️ Founder · MetaCommunity</div>
+          <div id="s2-chip2" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">💡 Founder · Qashierwise</div>
+          <div id="s2-chip3" style="display:inline-flex;align-items:center;gap:12px;border-radius:10px;padding:14px 24px;font-size:26px;width:fit-content;">📱 Mobile Developer · Truku Indonesia</div>
+        </div>
+      </div>
+    </div>
+    <div id="s2-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">02 / 08</div>
+  </section>
+
+  <!-- SLIDE 3: METACOMMUNITY -->
+  <section data-screen-label="03 MetaCommunity" id="slide-meta">
+    <div id="s3-bg" style="position:absolute;inset:0;"></div>
+    <div id="s3-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:50%;left:30%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s3-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">TENTANG SAYA · 01</div>
+
+    <div style="position:relative;z-index:2;width:1700px;display:flex;align-items:center;gap:80px;">
+      <!-- left: info -->
+      <div style="display:flex;flex-direction:column;gap:24px;flex:1;">
+        <span id="s3-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Founder &amp; Inisiator</span>
+        <div id="s3-orgname" style="font-size:80px;font-weight:800;letter-spacing:-0.025em;line-height:1.0;">Meta<br/>Community</div>
+        <p id="s3-desc" style="font-size:28px;font-weight:400;line-height:1.5;max-width:600px;">Komunitas digital yang menghubungkan para developer, desainer, dan tech enthusiast di Indonesia.</p>
+        <a id="s3-url" href="https://metacommunity.my.id" target="_blank" style="display:inline-flex;align-items:center;gap:10px;border-radius:100px;padding:14px 32px;font-family:'JetBrains Mono',monospace;font-size:26px;width:fit-content;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h10M8 3c-2 2-2 6 0 10M8 3c2 2 2 6 0 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          metacommunity.my.id
+        </a>
+      </div>
+      <!-- right: website screenshot in browser frame -->
+      <div style="flex-shrink:0;display:flex;flex-direction:column;align-items:center;gap:0;">
+        <div id="s3-browser" style="width:680px;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);">
+          <div id="s3-browser-bar" style="height:44px;display:flex;align-items:center;padding:0 16px;gap:8px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#28ca41;"></div>
+            <div id="s3-urlbar" style="flex:1;height:32px;border-radius:6px;margin-left:8px;display:flex;align-items:center;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:24px;">metacommunity.my.id</div>
+          </div>
+          <img src="assets/metacommunity-web.png" alt="MetaCommunity Website" style="width:100%;display:block;max-height:560px;object-fit:cover;object-position:top;" />
+        </div>
+      </div>
+    </div>
+    <div id="s3-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">03 / 08</div>
+  </section>
+
+  <!-- SLIDE 4: QASHIERWISE -->
+  <section data-screen-label="04 Qashierwise" id="slide-qashier">
+    <div id="s4-bg" style="position:absolute;inset:0;"></div>
+    <div id="s4-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:50%;left:70%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s4-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">TENTANG SAYA · 02</div>
+
+    <div style="position:relative;z-index:2;width:1700px;display:flex;align-items:center;gap:80px;">
+      <!-- left: website screenshot -->
+      <div style="flex-shrink:0;">
+        <div id="s4-browser" style="width:680px;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);">
+          <div id="s4-browser-bar" style="height:44px;display:flex;align-items:center;padding:0 16px;gap:8px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#28ca41;"></div>
+            <div id="s4-urlbar" style="flex:1;height:32px;border-radius:6px;margin-left:8px;display:flex;align-items:center;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:24px;">qashierwise.com</div>
+          </div>
+          <img src="assets/qashierwise-web.png" alt="Qashierwise Website" style="width:100%;display:block;max-height:560px;object-fit:cover;object-position:top;" />
+        </div>
+      </div>
+      <!-- right: info -->
+      <div style="display:flex;flex-direction:column;gap:24px;flex:1;">
+        <span id="s4-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Founder &amp; Builder</span>
+        <div id="s4-orgname" style="font-size:80px;font-weight:800;letter-spacing:-0.025em;line-height:1.0;">Qashier<span id="s4-orgname2">wise</span></div>
+        <p id="s4-desc" style="font-size:28px;font-weight:400;line-height:1.5;max-width:600px;">Solusi bisnis cerdas yang memudahkan manajemen keuangan dan operasional usaha.</p>
+        <a id="s4-url" href="https://qashierwise.com" target="_blank" style="display:inline-flex;align-items:center;gap:10px;border-radius:100px;padding:14px 32px;font-family:'JetBrains Mono',monospace;font-size:26px;width:fit-content;text-decoration:none;">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M3 8h10M8 3c-2 2-2 6 0 10M8 3c2 2 2 6 0 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+          qashierwise.com
+        </a>
+      </div>
+    </div>
+    <div id="s4-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">04 / 08</div>
+  </section>
+
+  <!-- SLIDE 5: TRUKU INDONESIA -->
+  <section data-screen-label="05 Truku Indonesia" id="slide-truku">
+    <div id="s5-bg" style="position:absolute;inset:0;"></div>
+    <div id="s5-glow" style="position:absolute;width:800px;height:800px;border-radius:50%;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s5-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">TENTANG SAYA · 03</div>
+
+    <div style="position:relative;z-index:2;width:1700px;display:flex;align-items:center;gap:80px;">
+      <!-- left: info -->
+      <div style="display:flex;flex-direction:column;gap:24px;flex:1;">
+        <span id="s5-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Mobile Developer</span>
+        <div id="s5-orgname" style="font-size:80px;font-weight:800;letter-spacing:-0.025em;line-height:1.05;display:flex;flex-direction:column;gap:0;">
+          <span id="s5-t1" style="display:block;">Truku</span>
+          <span id="s5-t2" style="display:block;">Indonesia</span>
+        </div>
+        <div id="s5-rolebig" style="font-size:36px;font-weight:500;">Mobile Developer</div>
+        <p id="s5-desc" style="font-size:26px;font-weight:400;line-height:1.5;max-width:600px;">Membangun aplikasi mobile yang scalable dan berkualitas tinggi bersama tim Truku Indonesia.</p>
+        <div id="s5-chip" style="display:inline-flex;align-items:center;gap:10px;border-radius:100px;padding:14px 32px;font-family:'JetBrains Mono',monospace;font-size:26px;width:fit-content;">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="4" y="1" width="8" height="14" rx="1.5" stroke="currentColor" stroke-width="1.3"/><circle cx="8" cy="12" r="0.8" fill="currentColor"/></svg>
+          Android &amp; iOS Development
+        </div>
+      </div>
+      <!-- right: website screenshot -->
+      <div style="flex-shrink:0;">
+        <div id="s5-browser" style="width:680px;border-radius:16px;overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.5);">
+          <div id="s5-browser-bar" style="height:44px;display:flex;align-items:center;padding:0 16px;gap:8px;">
+            <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;"></div>
+            <div style="width:12px;height:12px;border-radius:50%;background:#28ca41;"></div>
+            <div id="s5-urlbar" style="flex:1;height:32px;border-radius:6px;margin-left:8px;display:flex;align-items:center;padding:0 12px;font-family:'JetBrains Mono',monospace;font-size:24px;">truku.co.id</div>
+          </div>
+          <img src="assets/truku-web.png" alt="Truku Indonesia Website" style="width:100%;display:block;max-height:560px;object-fit:cover;object-position:top;" />
+        </div>
+      </div>
+    </div>
+    <div id="s5-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">05 / 08</div>
+  </section>
+
+  <!-- SLIDE 6: KENAPA BUFFER MESSAGE PENTING? -->
+  <section data-screen-label="06 Kenapa Buffer Message" id="slide-why">
+    <div id="s6-bg" style="position:absolute;inset:0;"></div>
+    <div id="s6-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:55%;left:25%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s6-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">THE PROBLEM</div>
+
+    <div style="position:relative;z-index:2;width:1700px;display:flex;align-items:center;gap:120px;">
+
+      <!-- LEFT: Realistic WhatsApp phone mockup -->
+      <div style="flex-shrink:0;position:relative;">
+        <!-- decorative warning chip -->
+        <div id="s6-warn" style="position:absolute;top:-32px;right:-40px;display:flex;align-items:center;gap:10px;padding:12px 22px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;z-index:3;transform:rotate(6deg);">
+          <span style="font-size:20px;">⚠</span> SPAM DETECTED
+        </div>
+
+        <!-- iPhone-style frame -->
+        <div id="s6-phone" style="width:380px;height:740px;border-radius:48px;padding:14px;position:relative;box-shadow:0 50px 120px rgba(0,0,0,0.7), 0 0 0 2px rgba(255,255,255,0.08);">
+          <!-- screen -->
+          <div style="width:100%;height:100%;border-radius:36px;overflow:hidden;background:#0a1410;display:flex;flex-direction:column;position:relative;">
+            <!-- notch -->
+            <div style="position:absolute;top:8px;left:50%;transform:translateX(-50%);width:110px;height:26px;border-radius:14px;background:#000;z-index:5;"></div>
+
+            <!-- WA header -->
+            <div style="height:88px;background:#1f2c33;display:flex;align-items:center;padding:32px 16px 12px;gap:12px;flex-shrink:0;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div style="width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#10b981,#059669);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:700;color:#fff;">U</div>
+              <div style="flex:1;">
+                <div style="font-size:18px;font-weight:600;color:#fff;line-height:1.2;">User</div>
+                <div style="font-size:13px;color:rgba(255,255,255,0.5);">online</div>
+              </div>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+
+            <!-- chat body -->
+            <div style="flex:1;background:#0a1410;padding:16px 14px;display:flex;flex-direction:column;gap:8px;overflow:hidden;">
+              <!-- spam bubbles from user -->
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;animation:spamPulse 2s ease-in-out infinite;">
+                Halo <span style="font-size:11px;opacity:0.5;">16:07</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;animation:spamPulse 2s ease-in-out infinite 0.3s;">
+                Halo <span style="font-size:11px;opacity:0.5;">16:07</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;animation:spamPulse 2s ease-in-out infinite 0.6s;">
+                Halo <span style="font-size:11px;opacity:0.5;">16:07</span>
+              </div>
+
+              <!-- bot reply (bloated) -->
+              <div style="background:#005c4b;color:#fff;padding:10px 14px;border-radius:8px 8px 0 8px;align-self:flex-end;max-width:85%;font-size:14px;line-height:1.4;margin-top:4px;">
+                Halo juga! Ada yang bisa saya bantu? <span style="font-size:11px;opacity:0.6;">16:07 ✓✓</span>
+              </div>
+
+              <!-- more spam -->
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;margin-top:8px;animation:spamPulse 2s ease-in-out infinite 0.9s;">
+                halo <span style="font-size:11px;opacity:0.5;">16:11</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;animation:spamPulse 2s ease-in-out infinite 1.2s;">
+                halo <span style="font-size:11px;opacity:0.5;">16:11</span>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px;background:#202c33;color:#fff;padding:10px 14px;border-radius:8px 8px 8px 0;width:fit-content;font-size:18px;font-weight:500;animation:spamPulse 2s ease-in-out infinite 1.5s;">
+                halo <span style="font-size:11px;opacity:0.5;">16:11</span>
+              </div>
+
+              <!-- bot reply 2 -->
+              <div style="background:#005c4b;color:#fff;padding:10px 14px;border-radius:8px 8px 0 8px;align-self:flex-end;max-width:85%;font-size:14px;line-height:1.4;margin-top:4px;">
+                Baik, saya mengerti Anda ingin menyapa... <span style="font-size:11px;opacity:0.6;">16:12 ✓✓</span>
+              </div>
+            </div>
+
+            <!-- API call counter overlay -->
+            <div id="s6-counter" style="position:absolute;bottom:24px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);padding:14px 22px;border-radius:14px;display:flex;align-items:center;gap:14px;border:1px solid;z-index:4;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#ef4444;animation:pulse 1.2s ease-in-out infinite;"></div>
+              <div style="display:flex;flex-direction:column;line-height:1.1;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:0.1em;">API CALLS</span>
+                <span style="font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:700;color:#ef4444;">×6</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: penjelasan -->
+      <div style="display:flex;flex-direction:column;gap:36px;flex:1;">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <span id="s6-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Mengapa ini masalah?</span>
+          <div id="s6-title" style="font-size:78px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">Kenapa Buffer<br/><span id="s6-title-span">Message Penting?</span></div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <div id="s6-point1" style="position:relative;display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-radius:18px;border:1px solid;overflow:hidden;">
+            <div id="s6-numbig1" style="position:absolute;right:24px;top:8px;font-family:'JetBrains Mono',monospace;font-size:60px;font-weight:800;opacity:0.08;letter-spacing:-0.05em;">01</div>
+            <div id="s6-icon1" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px;">🔁</div>
+            <div style="flex:1;">
+              <div style="font-size:30px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em;">Duplikasi Respons AI</div>
+              <div id="s6-pdesc1" style="font-size:24px;line-height:1.5;">Tanpa buffer, setiap pesan langsung memicu AI — 3 "Halo" = 3 panggilan API terpisah.</div>
+            </div>
+          </div>
+
+          <div id="s6-point2" style="position:relative;display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-radius:18px;border:1px solid;overflow:hidden;">
+            <div id="s6-numbig2" style="position:absolute;right:24px;top:8px;font-family:'JetBrains Mono',monospace;font-size:60px;font-weight:800;opacity:0.08;letter-spacing:-0.05em;">02</div>
+            <div id="s6-icon2" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px;">⚡</div>
+            <div style="flex:1;">
+              <div style="font-size:30px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em;">Beban Sistem Melonjak</div>
+              <div id="s6-pdesc2" style="font-size:24px;line-height:1.5;">Race condition &amp; response tidak konsisten ketika pesan datang bersamaan.</div>
+            </div>
+          </div>
+
+          <div id="s6-point3" style="position:relative;display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-radius:18px;border:1px solid;overflow:hidden;">
+            <div id="s6-numbig3" style="position:absolute;right:24px;top:8px;font-family:'JetBrains Mono',monospace;font-size:60px;font-weight:800;opacity:0.08;letter-spacing:-0.05em;">03</div>
+            <div id="s6-icon3" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:28px;">💸</div>
+            <div style="flex:1;">
+              <div style="font-size:30px;font-weight:700;margin-bottom:8px;letter-spacing:-0.01em;">Biaya Token Membengkak</div>
+              <div id="s6-pdesc3" style="font-size:24px;line-height:1.5;">Tiap panggilan API LLM ada biayanya — pesan duplikat = token terbuang sia-sia.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="s6-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">06 / 08</div>
+  </section>
+
+  <!-- SLIDE 7: EFEK MENERAPKAN BUFFER MESSAGE -->
+  <section data-screen-label="07 Efek Buffer Message" id="slide-effect">
+    <div id="s7-bg" style="position:absolute;inset:0;"></div>
+    <div id="s7-glow" style="position:absolute;width:800px;height:800px;border-radius:50%;top:50%;left:60%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <div id="s7-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">THE SOLUTION IMPACT</div>
+
+    <div style="position:relative;z-index:2;width:1740px;">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:60px;margin-bottom:56px;">
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          <span id="s7-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Apa yang berubah?</span>
+          <div id="s7-title" style="font-size:78px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">Efek Menerapkan<br/><span id="s7-title-span">Buffer Message</span></div>
+        </div>
+        <!-- Hero stat -->
+        <div id="s7-herostat" style="display:flex;flex-direction:column;align-items:flex-end;gap:8px;padding:20px 32px;border-radius:18px;border:1px solid;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.15em;opacity:0.7;">AVG. COST REDUCTION</span>
+          <div style="display:flex;align-items:baseline;gap:8px;">
+            <span id="s7-bignum" style="font-size:88px;font-weight:800;letter-spacing:-0.04em;line-height:1;">60%</span>
+            <span id="s7-bignumarrow" style="font-size:36px;font-weight:700;">↓</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 cards: cleaner, with hero number on each -->
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;">
+
+        <!-- Card 1: Cost -->
+        <div id="s7-card1" style="position:relative;border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:20px;border:1px solid;overflow:hidden;min-height:340px;">
+          <div id="s7-c1-deco" style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;opacity:0.08;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div id="s7-c1-icon" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">💰</div>
+            <span id="s7-c1-tag" style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.1em;opacity:0.5;">01</span>
+          </div>
+          <!-- mini chart -->
+          <div style="display:flex;align-items:flex-end;gap:6px;height:54px;">
+            <div id="s7-bar1a" style="width:18px;border-radius:4px 4px 0 0;height:90%;opacity:0.85;"></div>
+            <div id="s7-bar1b" style="width:18px;border-radius:4px 4px 0 0;height:65%;opacity:0.65;"></div>
+            <div id="s7-bar1c" style="width:18px;border-radius:4px 4px 0 0;height:50%;opacity:0.45;"></div>
+            <span id="s7-arrow1" style="font-size:24px;margin:0 4px;align-self:center;opacity:0.7;">→</span>
+            <div id="s7-bar1d" style="width:18px;border-radius:4px 4px 0 0;height:25%;"></div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Hemat Token Cost</div>
+            <div id="s7-cdesc1" style="font-size:24px;line-height:1.45;">Pesan digabung jadi 1 konteks. API call berkurang drastis, tagihan LLM turun.</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Accuracy -->
+        <div id="s7-card2" style="position:relative;border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:20px;border:1px solid;overflow:hidden;min-height:340px;">
+          <div id="s7-c2-deco" style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;opacity:0.08;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div id="s7-c2-icon" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">🎯</div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.1em;opacity:0.5;">02</span>
+          </div>
+          <!-- merged bubbles -->
+          <div style="display:flex;align-items:center;gap:6px;height:54px;flex-wrap:nowrap;">
+            <div id="s7-msg1" style="padding:6px 12px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:18px;">m1</div>
+            <div id="s7-msg2" style="padding:6px 12px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:18px;">m2</div>
+            <div id="s7-msg3" style="padding:6px 12px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:18px;">m3</div>
+            <span style="font-size:22px;opacity:0.6;">→</span>
+            <div id="s7-merged" style="padding:6px 14px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;">1 ctx</div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Respons Akurat</div>
+            <div id="s7-cdesc2" style="font-size:24px;line-height:1.45;">AI membaca seluruh konteks sekaligus. Jawaban jadi lebih relevan.</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Stability -->
+        <div id="s7-card3" style="position:relative;border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:20px;border:1px solid;overflow:hidden;min-height:340px;">
+          <div id="s7-c3-deco" style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;opacity:0.08;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div id="s7-c3-icon" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">⚡</div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.1em;opacity:0.5;">03</span>
+          </div>
+          <!-- stability line -->
+          <div style="height:54px;display:flex;align-items:center;">
+            <svg width="100%" height="54" viewBox="0 0 200 54" preserveAspectRatio="none" fill="none">
+              <path id="s7-line-bg" d="M0,40 L20,38 L40,42 L60,15 L80,12 L100,14 L120,10 L140,11 L160,9 L180,8 L200,7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="0"/>
+              <circle id="s7-line-dot" cx="200" cy="7" r="5" fill="none"/>
+            </svg>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">Sistem Stabil</div>
+            <div id="s7-cdesc3" style="font-size:24px;line-height:1.45;">Race condition hilang. Sistem proses 1 batch per user — tanpa respons ganda.</div>
+          </div>
+        </div>
+
+        <!-- Card 4: UX -->
+        <div id="s7-card4" style="position:relative;border-radius:24px;padding:36px 32px;display:flex;flex-direction:column;gap:20px;border:1px solid;overflow:hidden;min-height:340px;">
+          <div id="s7-c4-deco" style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;opacity:0.08;"></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;">
+            <div id="s7-c4-icon" style="width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;">💬</div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:18px;letter-spacing:0.1em;opacity:0.5;">04</span>
+          </div>
+          <!-- single chat bubble illustration -->
+          <div style="height:54px;display:flex;align-items:center;">
+            <div id="s7-ux3" style="padding:10px 18px;border-radius:18px 18px 18px 4px;font-size:20px;line-height:1.2;font-weight:500;">Halo! Ada yang bisa dibantu? 👋</div>
+          </div>
+          <div>
+            <div style="font-size:28px;font-weight:700;letter-spacing:-0.01em;margin-bottom:8px;">UX Lebih Natural</div>
+            <div id="s7-cdesc4" style="font-size:24px;line-height:1.45;">User dapat 1 respons cerdas, bukan multiple reply yang membingungkan.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div id="s7-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">07 / 08</div>
+  </section>
+
+  <!-- SLIDE 8: N8N WORKFLOW KONSEP -->
+  <section data-screen-label="08 n8n Workflow" id="slide-n8n">
+    <div id="s8-bg" style="position:absolute;inset:0;"></div>
+    <div id="s8-glow" style="position:absolute;width:1100px;height:700px;border-radius:50%;top:60%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
+    <!-- decorative grid -->
+    <div id="s8-griddeco" style="position:absolute;inset:0;background-image:radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);background-size:32px 32px;pointer-events:none;"></div>
+
+    <div id="s8-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">IMPLEMENTATION WITH N8N</div>
+
+    <div style="position:relative;z-index:2;width:1740px;display:flex;flex-direction:column;gap:48px;">
+
+      <!-- Header -->
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <span id="s8-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Buffer Message di n8n</span>
+          <div id="s8-title" style="font-size:72px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">Workflow Konsep<br/><span id="s8-title-span">dengan n8n</span></div>
+        </div>
+        <div id="s8-n8n-badge" style="display:flex;align-items:center;gap:14px;padding:18px 32px;border-radius:18px;border:1px solid;">
+          <svg width="40" height="40" viewBox="0 0 36 36" fill="none">
+            <circle cx="10" cy="18" r="4" fill="#FF6B35"/>
+            <circle cx="18" cy="10" r="4" fill="#FF6B35"/>
+            <circle cx="18" cy="26" r="4" fill="#FF6B35"/>
+            <circle cx="26" cy="18" r="4" fill="#FF6B35"/>
+            <path d="M10 18L18 10M10 18L18 26M18 10L26 18M18 26L26 18" stroke="#FF6B35" stroke-width="2"/>
+          </svg>
+          <div style="display:flex;flex-direction:column;line-height:1;gap:4px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:14px;opacity:0.6;letter-spacing:0.15em;">POWERED BY</span>
+            <span style="font-size:30px;font-weight:800;color:#FF6B35;letter-spacing:-0.02em;">n8n</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workflow canvas wrapper -->
+      <div id="s8-canvas" style="position:relative;border-radius:28px;padding:64px 48px 56px;border:1px solid;overflow:visible;">
+        <!-- canvas chrome dots -->
+        <div style="position:absolute;top:18px;left:24px;display:flex;gap:8px;align-items:center;">
+          <div style="width:12px;height:12px;border-radius:50%;background:#ef4444;opacity:0.7;"></div>
+          <div style="width:12px;height:12px;border-radius:50%;background:#f59e0b;opacity:0.7;"></div>
+          <div style="width:12px;height:12px;border-radius:50%;background:#10b981;opacity:0.7;"></div>
+          <span id="s8-canvtitle" style="font-family:'JetBrains Mono',monospace;font-size:14px;margin-left:14px;letter-spacing:0.1em;">workflow.json</span>
+        </div>
+
+        <!-- the diagram -->
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:0;position:relative;">
+
+          <!-- connector line behind nodes -->
+          <svg style="position:absolute;top:60px;left:60px;right:60px;height:4px;width:calc(100% - 120px);z-index:0;" preserveAspectRatio="none" viewBox="0 0 100 4">
+            <line id="s8-connector" x1="0" y1="2" x2="100" y2="2" stroke-width="2" stroke-dasharray="4 4"/>
+          </svg>
+
+          <!-- Node 1: Webhook -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
+            <div id="s8-node1" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node1-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2v6M12 22v-6M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M22 12h-6M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;">Webhook</div>
+              <!-- input/output dots -->
+              <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step1" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 01</div>
+              <div id="s8-desc1" style="font-size:24px;line-height:1.4;max-width:220px;">Pesan WA masuk via webhook trigger</div>
+            </div>
+          </div>
+
+          <!-- Arrow 1 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:54px;">
+            <div id="s8-pulse1" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite;"></div>
+          </div>
+
+          <!-- Node 2: Wait (the hero) -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
+            <div id="s8-node2-glow" style="position:absolute;top:-10px;width:180px;height:160px;border-radius:24px;opacity:0.3;filter:blur(20px);"></div>
+            <div id="s8-node2" style="width:170px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <!-- "key" badge -->
+              <div id="s8-keybadge" style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);padding:4px 12px;border-radius:100px;font-family:'JetBrains Mono',monospace;font-size:14px;font-weight:700;letter-spacing:0.1em;">★ KEY</div>
+              <div id="s8-node2-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2.5"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;">Wait Node</div>
+              <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+              <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step2" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 02 · 3–5s</div>
+              <div id="s8-desc2" style="font-size:24px;line-height:1.4;max-width:220px;">Tahan eksekusi, biarkan pesan menumpuk</div>
+            </div>
+          </div>
+
+          <!-- Arrow 2 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:54px;">
+            <div id="s8-pulse2" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 0.4s;"></div>
+          </div>
+
+          <!-- Node 3: Merge -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
+            <div id="s8-node3" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node3-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M3 6l6 6-6 6M21 6l-6 6 6 6M9 12h6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;">Merge</div>
+              <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+              <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step3" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 03</div>
+              <div id="s8-desc3" style="font-size:24px;line-height:1.4;max-width:220px;">Gabungkan semua pesan jadi 1 konteks</div>
+            </div>
+          </div>
+
+          <!-- Arrow 3 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:54px;">
+            <div id="s8-pulse3" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 0.8s;"></div>
+          </div>
+
+          <!-- Node 4: AI -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
+            <div id="s8-node4" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node4-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="4" y="8" width="16" height="12" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="14" r="1.5" fill="currentColor"/><circle cx="15" cy="14" r="1.5" fill="currentColor"/><path d="M9 8V5M15 8V5M12 5V3M4 12H2M22 12h-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;">AI Agent</div>
+              <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+              <div style="position:absolute;right:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step4" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 04</div>
+              <div id="s8-desc4" style="font-size:24px;line-height:1.4;max-width:220px;">LLM proses konteks lengkap → reply</div>
+            </div>
+          </div>
+
+          <!-- Arrow 4 -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:6px;padding-top:54px;">
+            <div id="s8-pulse4" style="width:14px;height:14px;border-radius:50%;animation:flow 1.6s ease-in-out infinite 1.2s;"></div>
+          </div>
+
+          <!-- Node 5: Send -->
+          <div style="display:flex;flex-direction:column;align-items:center;gap:18px;position:relative;z-index:1;width:240px;">
+            <div id="s8-node5" style="width:160px;height:140px;border-radius:20px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;border:2px solid;position:relative;">
+              <div id="s8-node5-icon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div style="font-size:24px;font-weight:700;">Send Reply</div>
+              <div style="position:absolute;left:-6px;top:50%;transform:translateY(-50%);width:12px;height:12px;border-radius:50%;background:#FF6B35;border:2px solid;"></div>
+            </div>
+            <div style="text-align:center;display:flex;flex-direction:column;gap:8px;">
+              <div id="s8-step5" style="font-family:'JetBrains Mono',monospace;font-size:18px;font-weight:700;letter-spacing:0.1em;">STEP 05</div>
+              <div id="s8-desc5" style="font-size:24px;line-height:1.4;max-width:220px;">Kirim 1 respons cerdas ke user</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom takeaway -->
+      <div style="display:flex;gap:24px;align-items:stretch;">
+        <div id="s8-note" style="flex:1;display:flex;align-items:center;gap:20px;padding:24px 32px;border-radius:18px;border:1px solid;">
+          <div id="s8-noteicon" style="width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4M12 22a10 10 0 100-20 10 10 0 000 20z" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div id="s8-notetxt" style="font-size:24px;line-height:1.4;">
+            <strong>Wait Node</strong> menahan eksekusi hingga jeda pesan melewati threshold, lalu flush ke AI dalam <strong>satu konteks</strong>.
+          </div>
+        </div>
+        <div id="s8-stat" style="display:flex;flex-direction:column;justify-content:center;padding:24px 36px;border-radius:18px;border:1px solid;min-width:280px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:16px;letter-spacing:0.15em;opacity:0.6;">SEMUA NO-CODE</span>
+          <span id="s8-statbig" style="font-size:48px;font-weight:800;letter-spacing:-0.02em;line-height:1.1;">5 nodes saja</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="s8-num" style="position:absolute;bottom:52px;right:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.1em;z-index:10;">08 / 08</div>
+  </section>
+
+  
+
+</deck-stage>
+
+<div id="tweaks-root"></div>
+
+<style>
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.65)} }
+@keyframes spin { to { transform: rotate(360deg); } }
+</style>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "theme": "midnight"
+}/*EDITMODE-END*/;
+
+const THEMES = {
+  dark: {
+    name: "Dark Indigo",
+    font: "'Space Grotesk', sans-serif",
+    bg: "#0d0d1a",
+    bg2: "#0b0b18",
+    surface: "rgba(99,102,241,0.1)",
+    surfaceBorder: "rgba(99,102,241,0.25)",
+    text: "#f0f0f5",
+    textMuted: "rgba(240,240,245,0.55)",
+    accent: "#6366f1",
+    accentGrad: "linear-gradient(135deg,#818cf8,#a78bfa,#c084fc)",
+    accentGrad2: "linear-gradient(135deg,#a78bfa,#c084fc)",
+    accent2: "#a78bfa",
+    accent3: "#22d3ee",
+    topbarColor: "rgba(99,102,241,0.4)",
+    numColor: "rgba(99,102,241,0.3)",
+    termColor: "rgba(99,102,241,0.35)",
+    termColor2: "rgba(168,85,247,0.3)",
+    tagColor: "#6366f1",
+    gridColor: "rgba(99,102,241,0.04)",
+    glow1: "rgba(99,102,241,0.18)",
+    glow2: "rgba(168,85,247,0.12)",
+    glow3: "rgba(34,211,238,0.1)",
+    divider: "linear-gradient(90deg,transparent,#6366f1,transparent)",
+    badgeBg: "rgba(99,102,241,0.12)",
+    badgeBorder: "rgba(99,102,241,0.3)",
+    badgeColor: "#a5b4fc",
+    ringGrad: "conic-gradient(from 0deg,#6366f1,#a78bfa,#c084fc,#6366f1)",
+    hiColor: "#6366f1",
+    nameLastGrad: "linear-gradient(135deg,#818cf8,#c084fc)",
+    chip1bg: "rgba(99,102,241,0.1)", chip1border: "rgba(99,102,241,0.25)", chip1color: "#a5b4fc",
+    chip2bg: "rgba(99,102,241,0.1)", chip2border: "rgba(99,102,241,0.25)", chip2color: "#a5b4fc",
+    chip3bg: "rgba(99,102,241,0.1)", chip3border: "rgba(99,102,241,0.25)", chip3color: "#a5b4fc",
+    orgGrad3: "linear-gradient(135deg,#818cf8,#a78bfa,#c084fc)",
+    orgGrad4: "linear-gradient(135deg,#a78bfa,#c084fc)",
+    orgColor4b: "#f0f0f5",
+    urlbg3: "rgba(99,102,241,0.1)", urlborder3: "rgba(99,102,241,0.3)", urlcolor3: "#a5b4fc",
+    urlbg4: "rgba(168,85,247,0.1)", urlborder4: "rgba(168,85,247,0.3)", urlcolor4: "#c4b5fd",
+    label3color: "#6366f1", label4color: "#a78bfa", label5color: "#22d3ee",
+    t1color: "#22d3ee", t2color: "#f0f0f5",
+    rolebigcolor: "rgba(240,240,245,0.75)",
+    desccolor5: "rgba(240,240,245,0.45)",
+    chipbg5: "rgba(34,211,238,0.08)", chipborder5: "rgba(34,211,238,0.25)", chipcolor5: "#67e8f9",
+    browserbar: "#1a1a2e", urlbarbg: "rgba(255,255,255,0.07)", urlbarcolor: "rgba(160,160,200,0.6)",
+    cornerBorder: "rgba(99,102,241,0.4)",
+  },
+  light: {
+    name: "Light Clean",
+    font: "'Plus Jakarta Sans', sans-serif",
+    bg: "#f5f5ff",
+    bg2: "#eeeeff",
+    surface: "rgba(99,102,241,0.08)",
+    surfaceBorder: "rgba(99,102,241,0.2)",
+    text: "#1e1b4b",
+    textMuted: "rgba(30,27,75,0.55)",
+    accent: "#4f46e5",
+    accentGrad: "linear-gradient(135deg,#4f46e5,#7c3aed,#9333ea)",
+    accentGrad2: "linear-gradient(135deg,#7c3aed,#9333ea)",
+    accent2: "#7c3aed",
+    accent3: "#0891b2",
+    topbarColor: "rgba(79,70,229,0.5)",
+    numColor: "rgba(79,70,229,0.35)",
+    termColor: "rgba(79,70,229,0.4)",
+    termColor2: "rgba(124,58,237,0.35)",
+    tagColor: "#4f46e5",
+    gridColor: "rgba(79,70,229,0.05)",
+    glow1: "rgba(99,102,241,0.12)",
+    glow2: "rgba(124,58,237,0.08)",
+    glow3: "rgba(8,145,178,0.08)",
+    divider: "linear-gradient(90deg,transparent,#4f46e5,transparent)",
+    badgeBg: "rgba(79,70,229,0.1)",
+    badgeBorder: "rgba(79,70,229,0.3)",
+    badgeColor: "#4f46e5",
+    ringGrad: "conic-gradient(from 0deg,#4f46e5,#7c3aed,#9333ea,#4f46e5)",
+    hiColor: "#4f46e5",
+    nameLastGrad: "linear-gradient(135deg,#4f46e5,#9333ea)",
+    chip1bg: "rgba(79,70,229,0.08)", chip1border: "rgba(79,70,229,0.2)", chip1color: "#4f46e5",
+    chip2bg: "rgba(79,70,229,0.08)", chip2border: "rgba(79,70,229,0.2)", chip2color: "#4f46e5",
+    chip3bg: "rgba(79,70,229,0.08)", chip3border: "rgba(79,70,229,0.2)", chip3color: "#4f46e5",
+    orgGrad3: "linear-gradient(135deg,#4f46e5,#7c3aed,#9333ea)",
+    orgGrad4: "linear-gradient(135deg,#7c3aed,#9333ea)",
+    orgColor4b: "#1e1b4b",
+    urlbg3: "rgba(79,70,229,0.08)", urlborder3: "rgba(79,70,229,0.25)", urlcolor3: "#4f46e5",
+    urlbg4: "rgba(124,58,237,0.08)", urlborder4: "rgba(124,58,237,0.25)", urlcolor4: "#7c3aed",
+    label3color: "#4f46e5", label4color: "#7c3aed", label5color: "#0891b2",
+    t1color: "#0891b2", t2color: "#1e1b4b",
+    rolebigcolor: "rgba(30,27,75,0.7)",
+    desccolor5: "rgba(30,27,75,0.55)",
+    chipbg5: "rgba(8,145,178,0.08)", chipborder5: "rgba(8,145,178,0.25)", chipcolor5: "#0891b2",
+    browserbar: "#e8e8f8", urlbarbg: "rgba(79,70,229,0.08)", urlbarcolor: "rgba(79,70,229,0.5)",
+    cornerBorder: "rgba(79,70,229,0.4)",
+  },
+  midnight: {
+    name: "Midnight Flame",
+    font: "'Sora', sans-serif",
+    bg: "#0f0a0a",
+    bg2: "#100b0b",
+    surface: "rgba(249,115,22,0.08)",
+    surfaceBorder: "rgba(249,115,22,0.22)",
+    text: "#fef3e2",
+    textMuted: "rgba(254,243,226,0.5)",
+    accent: "#f97316",
+    accentGrad: "linear-gradient(135deg,#f97316,#ef4444,#dc2626)",
+    accentGrad2: "linear-gradient(135deg,#ef4444,#dc2626)",
+    accent2: "#ef4444",
+    accent3: "#fbbf24",
+    topbarColor: "rgba(249,115,22,0.45)",
+    numColor: "rgba(249,115,22,0.3)",
+    termColor: "rgba(249,115,22,0.35)",
+    termColor2: "rgba(239,68,68,0.3)",
+    tagColor: "#f97316",
+    gridColor: "rgba(249,115,22,0.04)",
+    glow1: "rgba(249,115,22,0.15)",
+    glow2: "rgba(239,68,68,0.1)",
+    glow3: "rgba(251,191,36,0.1)",
+    divider: "linear-gradient(90deg,transparent,#f97316,transparent)",
+    badgeBg: "rgba(249,115,22,0.1)",
+    badgeBorder: "rgba(249,115,22,0.3)",
+    badgeColor: "#fdba74",
+    ringGrad: "conic-gradient(from 0deg,#f97316,#ef4444,#fbbf24,#f97316)",
+    hiColor: "#f97316",
+    nameLastGrad: "linear-gradient(135deg,#f97316,#ef4444)",
+    chip1bg: "rgba(249,115,22,0.08)", chip1border: "rgba(249,115,22,0.22)", chip1color: "#fdba74",
+    chip2bg: "rgba(249,115,22,0.08)", chip2border: "rgba(249,115,22,0.22)", chip2color: "#fdba74",
+    chip3bg: "rgba(249,115,22,0.08)", chip3border: "rgba(249,115,22,0.22)", chip3color: "#fdba74",
+    orgGrad3: "linear-gradient(135deg,#f97316,#ef4444,#dc2626)",
+    orgGrad4: "linear-gradient(135deg,#ef4444,#dc2626)",
+    orgColor4b: "#fef3e2",
+    urlbg3: "rgba(249,115,22,0.08)", urlborder3: "rgba(249,115,22,0.3)", urlcolor3: "#fdba74",
+    urlbg4: "rgba(239,68,68,0.08)", urlborder4: "rgba(239,68,68,0.3)", urlcolor4: "#fca5a5",
+    label3color: "#f97316", label4color: "#ef4444", label5color: "#fbbf24",
+    t1color: "#fbbf24", t2color: "#fef3e2",
+    rolebigcolor: "rgba(254,243,226,0.7)",
+    desccolor5: "rgba(254,243,226,0.45)",
+    chipbg5: "rgba(251,191,36,0.08)", chipborder5: "rgba(251,191,36,0.25)", chipcolor5: "#fcd34d",
+    browserbar: "#1c1010", urlbarbg: "rgba(249,115,22,0.1)", urlbarcolor: "rgba(249,115,22,0.5)",
+    cornerBorder: "rgba(249,115,22,0.4)",
+  },
+  emerald: {
+    name: "Emerald Tech",
+    font: "'Space Grotesk', sans-serif",
+    bg: "#050f0a",
+    bg2: "#060e0b",
+    surface: "rgba(16,185,129,0.08)",
+    surfaceBorder: "rgba(16,185,129,0.22)",
+    text: "#ecfdf5",
+    textMuted: "rgba(236,253,245,0.5)",
+    accent: "#10b981",
+    accentGrad: "linear-gradient(135deg,#10b981,#059669,#0d9488)",
+    accentGrad2: "linear-gradient(135deg,#059669,#0d9488)",
+    accent2: "#059669",
+    accent3: "#06b6d4",
+    topbarColor: "rgba(16,185,129,0.45)",
+    numColor: "rgba(16,185,129,0.3)",
+    termColor: "rgba(16,185,129,0.35)",
+    termColor2: "rgba(5,150,105,0.3)",
+    tagColor: "#10b981",
+    gridColor: "rgba(16,185,129,0.04)",
+    glow1: "rgba(16,185,129,0.15)",
+    glow2: "rgba(5,150,105,0.1)",
+    glow3: "rgba(6,182,212,0.1)",
+    divider: "linear-gradient(90deg,transparent,#10b981,transparent)",
+    badgeBg: "rgba(16,185,129,0.1)",
+    badgeBorder: "rgba(16,185,129,0.3)",
+    badgeColor: "#6ee7b7",
+    ringGrad: "conic-gradient(from 0deg,#10b981,#059669,#0d9488,#10b981)",
+    hiColor: "#10b981",
+    nameLastGrad: "linear-gradient(135deg,#10b981,#06b6d4)",
+    chip1bg: "rgba(16,185,129,0.08)", chip1border: "rgba(16,185,129,0.22)", chip1color: "#6ee7b7",
+    chip2bg: "rgba(16,185,129,0.08)", chip2border: "rgba(16,185,129,0.22)", chip2color: "#6ee7b7",
+    chip3bg: "rgba(16,185,129,0.08)", chip3border: "rgba(16,185,129,0.22)", chip3color: "#6ee7b7",
+    orgGrad3: "linear-gradient(135deg,#10b981,#059669,#0d9488)",
+    orgGrad4: "linear-gradient(135deg,#059669,#0d9488)",
+    orgColor4b: "#ecfdf5",
+    urlbg3: "rgba(16,185,129,0.08)", urlborder3: "rgba(16,185,129,0.3)", urlcolor3: "#6ee7b7",
+    urlbg4: "rgba(5,150,105,0.08)", urlborder4: "rgba(5,150,105,0.3)", urlcolor4: "#34d399",
+    label3color: "#10b981", label4color: "#059669", label5color: "#06b6d4",
+    t1color: "#06b6d4", t2color: "#ecfdf5",
+    rolebigcolor: "rgba(236,253,245,0.7)",
+    desccolor5: "rgba(236,253,245,0.45)",
+    chipbg5: "rgba(6,182,212,0.08)", chipborder5: "rgba(6,182,212,0.25)", chipcolor5: "#67e8f9",
+    browserbar: "#071410", urlbarbg: "rgba(16,185,129,0.1)", urlbarcolor: "rgba(16,185,129,0.5)",
+    cornerBorder: "rgba(16,185,129,0.4)",
+  }
+};
+
+function applyTheme(t) {
+  const slides = ['hero','speaker','meta','qashier','truku'];
+
+  // helper
+  const s = (id, prop, val) => {
+    const el = document.getElementById(id);
+    if (el) el.style[prop] = val;
+  };
+  const sText = (id, val) => { const el = document.getElementById(id); if (el) el.style.color = val; };
+  const sGrad = (id, grad) => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.style.background = grad;
+      el.style.webkitBackgroundClip = 'text';
+      el.style.webkitTextFillColor = 'transparent';
+      el.style.backgroundClip = 'text';
+    }
+  };
+
+  // font
+  document.body.style.fontFamily = t.font;
+  document.querySelectorAll('section').forEach(el => el.style.fontFamily = t.font);
+
+  // slide bgs
+  ['s1','s2','s3','s4','s5'].forEach(id => {
+    s(id+'-bg', 'background', t.bg);
+  });
+
+  // grids
+  s('s1-grid','backgroundImage', `linear-gradient(${t.gridColor} 1px,transparent 1px),linear-gradient(90deg,${t.gridColor} 1px,transparent 1px)`);
+  s('s1-grid','backgroundSize', '60px 60px');
+
+  // glows
+  s('s1-glow1','background', `radial-gradient(ellipse at center,${t.glow1} 0%,transparent 70%)`);
+  s('s1-glow2','background', `radial-gradient(ellipse at center,${t.glow2} 0%,transparent 70%)`);
+  s('s2-glow','background', `radial-gradient(ellipse at center,${t.glow1} 0%,transparent 70%)`);
+  s('s3-glow','background', `radial-gradient(ellipse,${t.glow1} 0%,transparent 70%)`);
+  s('s4-glow','background', `radial-gradient(ellipse,${t.glow2} 0%,transparent 70%)`);
+  s('s5-glow','background', `radial-gradient(ellipse,${t.glow3} 0%,transparent 70%)`);
+
+  // corners
+  s('s1-corner-tl','borderTop', `2px solid ${t.cornerBorder}`);
+  s('s1-corner-tl','borderLeft', `2px solid ${t.cornerBorder}`);
+  s('s1-corner-br','borderBottom', `2px solid ${t.cornerBorder}`);
+  s('s1-corner-br','borderRight', `2px solid ${t.cornerBorder}`);
+
+  // topbars & nums
+  ['s1','s2','s3','s4','s5'].forEach(id => {
+    sText(id+'-topbar', t.topbarColor);
+    sText(id+'-num', t.numColor);
+  });
+
+  // slide 1
+  sText('s1-tag', t.tagColor);
+  s('s1-dot1','background', t.accent);
+  s('s1-dot2','background', t.accent);
+  s('s1-divider','background', t.divider);
+  sText('s1-title', t.text);
+  s('s1-title-span','background', t.accentGrad);
+  s('s1-title-span','webkitBackgroundClip', 'text');
+  s('s1-title-span','webkitTextFillColor', 'transparent');
+  s('s1-title-span','backgroundClip', 'text');
+  sText('s1-sub', t.textMuted);
+  s('s1-badge','background', t.badgeBg);
+  s('s1-badge','border', `1px solid ${t.badgeBorder}`);
+  sText('s1-badge', t.badgeColor);
+  sText('s1-term-l', t.termColor);
+  sText('s1-term-r', t.termColor2);
+
+  // slide 2
+  s('s2-ring','background', t.ringGrad);
+  s('s2-ring-inner','background', t.bg);
+  sText('s2-hi', t.hiColor);
+  sText('s2-name', t.text);
+  sGrad('s2-name-last', t.nameLastGrad);
+  ['s2-chip1','s2-chip2','s2-chip3'].forEach((id,i) => {
+    s(id,'background', [t.chip1bg,t.chip2bg,t.chip3bg][i]);
+    s(id,'border', `1px solid ${[t.chip1border,t.chip2border,t.chip3border][i]}`);
+    sText(id, [t.chip1color,t.chip2color,t.chip3color][i]);
+  });
+
+  // slide 3
+  sText('s3-label', t.label3color);
+  sGrad('s3-orgname', t.orgGrad3);
+  sText('s3-desc', t.textMuted);
+  s('s3-url','background', t.urlbg3);
+  s('s3-url','border', `1px solid ${t.urlborder3}`);
+  sText('s3-url', t.urlcolor3);
+  s('s3-browser','background', '#fff');
+  s('s3-browser-bar','background', t.browserbar);
+  s('s3-urlbar','background', t.urlbarbg);
+  sText('s3-urlbar', t.urlbarcolor);
+
+  // slide 4
+  sText('s4-label', t.label4color);
+  sGrad('s4-orgname', t.orgGrad4);
+  sText('s4-orgname2', t.orgColor4b);
+  s('s4-orgname2','webkitTextFillColor', t.orgColor4b);
+  sText('s4-desc', t.textMuted);
+  s('s4-url','background', t.urlbg4);
+  s('s4-url','border', `1px solid ${t.urlborder4}`);
+  sText('s4-url', t.urlcolor4);
+  s('s4-browser','background', '#fff');
+  s('s4-browser-bar','background', t.browserbar);
+  s('s4-urlbar','background', t.urlbarbg);
+  sText('s4-urlbar', t.urlbarcolor);
+
+  // slide 5
+  sText('s5-label', t.label5color);
+  sText('s5-t1', t.t1color);
+  sText('s5-t2', t.t2color);
+  sText('s5-rolebig', t.rolebigcolor);
+  sText('s5-desc', t.desccolor5);
+  s('s5-chip','background', t.chipbg5);
+  s('s5-chip','border', `1px solid ${t.chipborder5}`);
+  sText('s5-chip', t.chipcolor5);
+  s('s5-browser','background', '#fff');
+  s('s5-browser-bar','background', t.browserbar);
+  s('s5-urlbar','background', t.urlbarbg);
+  sText('s5-urlbar', t.urlbarcolor);
+
+  // slides 6–8 backgrounds & glows
+  ['s6','s7','s8'].forEach(id => {
+    s(id+'-bg','background', t.bg);
+    sText(id+'-topbar', t.topbarColor);
+    sText(id+'-num', t.numColor);
+  });
+  s('s6-glow','background',`radial-gradient(ellipse,${t.glow1} 0%,transparent 70%)`);
+  s('s7-glow','background',`radial-gradient(ellipse,${t.glow2} 0%,transparent 70%)`);
+  s('s8-glow','background',`radial-gradient(ellipse,${t.glow3} 0%,transparent 70%)`);
+
+  // slide 6
+  sText('s6-label', t.accent);
+  sText('s6-title', t.text);
+  sGrad('s6-title-span', t.accentGrad);
+  sText('s6-caption', t.textMuted);
+  s('s6-phone-bar','background', '#075e54');
+  s('s6-point1','background', t.surface); s('s6-point1','border', `1px solid ${t.surfaceBorder}`);
+  s('s6-point2','background', t.surface); s('s6-point2','border', `1px solid ${t.surfaceBorder}`);
+  s('s6-point3','background', t.surface); s('s6-point3','border', `1px solid ${t.surfaceBorder}`);
+  s('s6-icon1','background', t.badgeBg); s('s6-icon2','background', t.badgeBg); s('s6-icon3','background', t.badgeBg);
+  sText('s6-pdesc1', t.textMuted); sText('s6-pdesc2', t.textMuted); sText('s6-pdesc3', t.textMuted);
+
+  // slide 7
+  sText('s7-label', t.accent);
+  sText('s7-title', t.text);
+  sGrad('s7-title-span', t.accentGrad);
+  // cards
+  ['s7-card1','s7-card2','s7-card3','s7-card4'].forEach(id => {
+    s(id,'background', t.surface);
+    s(id,'border', `1px solid ${t.surfaceBorder}`);
+  });
+  sText('s7-cdesc1', t.textMuted); sText('s7-cdesc2', t.textMuted);
+  sText('s7-cdesc3', t.textMuted); sText('s7-cdesc4', t.textMuted);
+  // bar charts
+  s('s7-bar1a','background', t.accent); s('s7-bar1a','opacity','0.7');
+  s('s7-bar1b','background', t.accent); s('s7-bar1b','opacity','0.5');
+  s('s7-bar1c','background', t.accent); s('s7-bar1c','opacity','0.3');
+  s('s7-bar1d','background', t.accent2); s('s7-savings','color', t.accent);
+  // msg chips
+  s('s7-msg1','background', t.badgeBg); sText('s7-msg1', t.badgeColor);
+  s('s7-msg2','background', t.badgeBg); sText('s7-msg2', t.badgeColor);
+  s('s7-msg3','background', t.badgeBg); sText('s7-msg3', t.badgeColor);
+  s('s7-merged','background', t.accent); sText('s7-merged','#fff');
+  const line1 = document.getElementById('s7-line1');
+  if (line1) line1.setAttribute('stroke', t.accent);
+  // ux bubbles
+  s('s7-ux1','background', t.badgeBg); sText('s7-ux1', t.text);
+  s('s7-ux2','background', t.badgeBg); sText('s7-ux2', t.text);
+  s('s7-ux3','background', t.accent); sText('s7-ux3','#fff');
+
+  // slide 8
+  sText('s8-label', t.accent);
+  sText('s8-title', t.text);
+  sGrad('s8-title-span', t.accentGrad);
+  s('s8-n8n-badge','background', t.surface);
+  s('s8-n8n-badge','border', `1px solid ${t.surfaceBorder}`);
+  // nodes
+  ['s8-node1','s8-node2','s8-node3','s8-node4','s8-node5'].forEach((id,i) => {
+    s(id,'background', t.surface);
+    s(id,'borderColor', [t.accent,t.accent2,t.accent,t.accent2,t.accent][i]);
+    sText(id, t.text);
+  });
+  // arrows
+  ['s8-arr1','s8-arr2','s8-arr3','s8-arr4'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      const bar = el.querySelector('div');
+      if (bar) bar.style.background = t.accent;
+    }
+  });
+  [('s8-arr1t'),('s8-arr2t'),('s8-arr3t'),('s8-arr4t')].forEach(id => sText(id, t.textMuted));
+  ['s8-ann2','s8-ann3','s8-ann4','s8-ann5'].forEach(id => sText(id, t.textMuted));
+  s('s8-note','background', t.surface);
+  s('s8-note','border', `1px solid ${t.surfaceBorder}`);
+  sText('s8-notetxt', t.textMuted);
+
+  // text colors for desc/title slides
+  document.querySelectorAll('#slide-meta p, #slide-qashier p, #slide-truku p').forEach(el => el.style.color = t.textMuted);
+}
+
+function App() {
+  const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+  React.useEffect(() => {
+    const t = THEMES[tweaks.theme] || THEMES.dark;
+    applyTheme(t);
+  }, [tweaks.theme]);
+
+  return (
+    <TweaksPanel>
+      <TweakSection label="Pilih Tema">
+        <TweakSelect
+          label="Tema"
+          value={tweaks.theme}
+          options={["dark", "light", "midnight", "emerald"]}
+          onChange={v => setTweak("theme", v)}
+        />
+      </TweakSection>
+    </TweaksPanel>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("tweaks-root")).render(<App />);
+</script>
+</body>
+</html>
