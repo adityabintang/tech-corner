@@ -202,26 +202,26 @@
 
   <!-- SLIDE 6: APA ITU BUFFER MESSAGE? -->
   <section data-screen-label="06 Apa itu Buffer Message" id="slide-buffer-intro">
-    <div id="s6-bg" style="position:absolute;inset:0;"></div>
-    <div id="s6-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:50%;left:70%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-    <div id="s6-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;">KONSEP DASAR</div>
+    <div id="s6-bg" style="position:absolute;inset:0;background:#0f0a0a;"></div>
+    <div id="s6-glow" style="position:absolute;width:900px;height:700px;border-radius:50%;top:50%;left:70%;transform:translate(-50%,-50%);pointer-events:none;background:radial-gradient(circle,rgba(249,115,22,0.15) 0%,transparent 70%);"></div>
+    <div id="s6-topbar" style="position:absolute;top:48px;left:80px;font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.12em;z-index:10;color:rgba(249,115,22,0.7);">KONSEP DASAR</div>
 
     <div style="position:relative;z-index:2;width:1700px;display:flex;flex-direction:column;gap:60px;">
       <!-- Header -->
       <div style="display:flex;flex-direction:column;gap:14px;">
-        <span id="s6-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;">// Definisi Teknis</span>
-        <div id="s6-title" style="font-size:80px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;">Apa itu<br/><span id="s6-title-span">Buffer Message?</span></div>
+        <span id="s6-label" style="font-family:'JetBrains Mono',monospace;font-size:24px;letter-spacing:0.15em;text-transform:uppercase;color:rgba(249,115,22,0.7);">// Definisi Teknis</span>
+        <div id="s6-title" style="font-size:80px;font-weight:800;letter-spacing:-0.02em;line-height:1.0;color:#fef3e2;">Apa itu<br/><span id="s6-title-span" style="background:linear-gradient(135deg,#f97316,#ef4444,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Buffer Message?</span></div>
       </div>
 
       <!-- Content Grid -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px;">
         <!-- Left: Definition -->
         <div style="display:flex;flex-direction:column;gap:24px;">
-          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;">
-            <div style="font-size:28px;font-weight:700;">📦 Accumulate</div>
-            <p style="font-size:24px;line-height:1.5;opacity:0.8;">Menampung pesan dalam buffer (penyimpanan sementara) alih-alih memproses langsung</p>
+          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;border-color:rgba(249,115,22,0.25);background:rgba(249,115,22,0.05);">
+            <div style="font-size:28px;font-weight:700;color:#f97316;">📦 Accumulate</div>
+            <p style="font-size:24px;line-height:1.5;opacity:0.8;color:#fef3e2;">Menampung pesan dalam buffer (penyimpanan sementara) alih-alih memproses langsung</p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;">
+          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;border-color:rgba(249,115,22,0.25);background:rgba(249,115,22,0.05);">
             <div style="font-size:28px;font-weight:700;">⏱️ Wait</div>
             <p style="font-size:24px;line-height:1.5;opacity:0.8;">Menunggu periode waktu tertentu (3-5 detik) atau jumlah pesan mencapai threshold</p>
           </div>
@@ -229,11 +229,11 @@
 
         <!-- Right: Benefits -->
         <div style="display:flex;flex-direction:column;gap:24px;">
-          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;">
+          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;border-color:rgba(249,115,22,0.25);background:rgba(249,115,22,0.05);">
             <div style="font-size:28px;font-weight:700;">🔀 Batch</div>
             <p style="font-size:24px;line-height:1.5;opacity:0.8;">Menggabungkan banyak pesan menjadi satu konteks untuk pemrosesan yang lebih efisien</p>
           </div>
-          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;">
+          <div style="display:flex;flex-direction:column;gap:16px;padding:32px;border-radius:18px;border:1px solid;border-color:rgba(249,115,22,0.25);background:rgba(249,115,22,0.05);">
             <div style="font-size:28px;font-weight:700;">💬 Respond</div>
             <p style="font-size:24px;line-height:1.5;opacity:0.8;">Mengirim satu respons cerdas yang mempertimbangkan seluruh konteks percakapan</p>
           </div>
@@ -241,11 +241,11 @@
       </div>
 
       <!-- Key Insight -->
-      <div style="padding:40px 48px;border-radius:18px;border:2px solid;position:relative;overflow:hidden;">
+      <div style="padding:40px 48px;border-radius:18px;border:2px solid;border-color:rgba(249,115,22,0.4);background:rgba(249,115,22,0.1);position:relative;overflow:hidden;">
         <div style="position:absolute;right:24px;top:8px;font-size:80px;opacity:0.1;">💡</div>
         <div style="display:flex;flex-direction:column;gap:12px;position:relative;z-index:1;">
-          <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.1em;opacity:0.6;text-transform:uppercase;">💡 Insight</span>
-          <p style="font-size:28px;line-height:1.5;font-weight:600;">Alih-alih memproses setiap pesan secara individual, kita menunggu dan mengumpulkan pesan untuk mendapatkan konteks yang lebih lengkap dan memberikan respons yang lebih akurat.</p>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:20px;letter-spacing:0.1em;opacity:0.6;text-transform:uppercase;color:rgba(249,115,22,0.7);">💡 Insight</span>
+          <p style="font-size:28px;line-height:1.5;font-weight:600;color:#fef3e2;">Alih-alih memproses setiap pesan secara individual, kita menunggu dan mengumpulkan pesan untuk mendapatkan konteks yang lebih lengkap dan memberikan respons yang lebih akurat.</p>
         </div>
       </div>
     </div>
